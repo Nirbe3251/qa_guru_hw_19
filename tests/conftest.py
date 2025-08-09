@@ -10,6 +10,8 @@ from selene_in_action import utils
 
 from appium import webdriver
 
+from selene_in_action.utils.allure import attach_bstack_video
+
 
 @pytest.fixture(scope='function', autouse=True)
 def mobile_management():
@@ -68,4 +70,4 @@ def mobile_management():
     with allure.step('tear down app session'):
         browser.quit()
 
-    #utils.allure.attach_bstack_video(session_id)
+    attach_bstack_video(session_id)
